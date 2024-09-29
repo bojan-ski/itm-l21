@@ -5,7 +5,7 @@ const getProductData = async (id) => {
 
     try {
         if (id == undefined) {
-            response = await axios(`${process.env.API_URL}?limit=s9`)
+            response = await axios(`${process.env.API_URL}?limit=9`)
         } else {
             response = await axios(`${process.env.API_URL}/${id}`)
         }    

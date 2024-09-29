@@ -3,6 +3,7 @@ import getProductData from "@/utils/getData";
 // components
 import ProductListCard from "@/components/ProductListCard";
 import NoDataAvailable from "@/components/NoDataAvailable";
+import SearchBar from "@/components/SearchBar";
 
 const Home = async () => {
   const productsListData = await getProductData()
@@ -10,6 +11,8 @@ const Home = async () => {
   return (
     <>
       <h1>Products</h1>
+
+      <SearchBar/>
 
       <section className="products">
         {productsListData ? (

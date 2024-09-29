@@ -1,7 +1,7 @@
 'use client'
 import Link from "next/link"
 
-const Error = ({ error }) => {
+const Error = ({ error, reset }) => {
     // console.log(error);
     return (
         <div className="error-page">
@@ -10,6 +10,9 @@ const Error = ({ error }) => {
             <Link href='/' className="btn-back">
                 Back to Home page
             </Link>
+            <button onClick={reset}>
+                Reset
+            </button>
         </div>
     )
 }
