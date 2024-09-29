@@ -1,18 +1,13 @@
-import getProductData from "@/utils/getData"
 import Link from "next/link"
-import { redirect } from "next/dist/server/api-utils"
+// utils 
+import getProductData from "@/utils/getData"
+// page
+import NotFound from "@/app/not-found"
 
-const SelectedProduct = async ({ params }) => {
-  const productDetails = await getProductData(params.product)
+const SelectedProduct = async ({ params: {productID} }) => {
+  const productDetails = await getProductData(productID) 
 
-  if (!productDetails) {
-    return <div className="error-page">
-        <h1>Page does not exist</h1>
-        <Link href='/' className="btn-back">
-          Back to Home page
-        </Link>
-    </div>
-  }
+  if (!productDetails) return <NotFound/>
 
   const { title, description, price, discountPercentage, rating, thumbnail } = productDetails
 

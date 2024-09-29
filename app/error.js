@@ -1,0 +1,17 @@
+'use client'
+import Link from "next/link"
+
+const Error = ({ error }) => {
+    // console.log(error);
+    return (
+        <div className="error-page">
+            <h1>Oppss!!!</h1>
+            <h2>There was an error</h2>
+            <Link href='/' className="btn-back">
+                Back to Home page
+            </Link>
+        </div>
+    )
+}
+
+export default Error

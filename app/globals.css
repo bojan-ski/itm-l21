@@ -17,6 +17,11 @@ h1{
   margin-bottom: 25px;
 }
 
+span{
+  font-weight: 600;
+}
+
+/* home page*/
 .products{
   display: flex;
   justify-content: center;
@@ -51,10 +56,7 @@ h1{
   background-color: rgb(67, 102, 131);
 }
 
-span{
-  font-weight: 600;
-}
-
+/* selected product - productID page */
 .product-details{
   background-color: #f7f7f7;
   display: flex;
@@ -73,6 +75,11 @@ span{
   margin-top: 10px;
 }
 
+/* not-found page & error page */
+.not-found-page,
 .error-page{
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
