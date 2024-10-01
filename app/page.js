@@ -1,22 +1,20 @@
-// utils
-import getProductData from "@/utils/getData";
 // components
 import ProductListCard from "@/components/ProductListCard";
 import NoDataAvailable from "@/components/NoDataAvailable";
-import SearchBar from "@/components/SearchBar";
+
+// export const revalidate = 0;
 
 const Home = async () => {
-  const productsListData = await getProductData()
-
+  const apiCall = await fetch('http://localhost:3000/api/products', {method: "GET"}) 
+  const productsListData = await apiCall.json()
+  
   return (
     <>
       <h1>Products</h1>
 
-      <SearchBar/>
-
       <section className="products">
         {productsListData ? (
-          productsListData?.products.map(productData => <ProductListCard key={productData.id} productData={productData} />
+          productsListData?.products?.map(productData => <ProductListCard key={productData.id} productData={productData} />
           )
         ) : (
           <NoDataAvailable />

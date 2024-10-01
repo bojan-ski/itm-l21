@@ -36,6 +36,28 @@ span{
   border-radius: 5px;
 }
 
+.searchResultsList{
+  width: 75%;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  margin: 30px auto;
+  padding: 10px 15px;
+}
+
+.searchResultsList .searchResultItem{
+  display: inline;
+  margin: 15px 20px;
+}
+
+.searchResultsList .searchResultItem:hover{
+  color: grey;
+  cursor: pointer;
+}
+
+.searchResultsList .searchResultItem:first-child{
+  margin-left: 0;
+}
+
 /* PAGES */
 /* home page*/
 .products{
@@ -98,4 +120,15 @@ span{
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+/* error page */
+.error-page .reset-btn{
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: yellowgreen;
+  color: #fff;
+  text-transform: capitalize;
+  border-radius: 5px;
+  border: none;
 }

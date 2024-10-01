@@ -10,7 +10,7 @@ const Error = ({ error, reset }) => {
             <Link href='/' className="btn-back">
                 Back to Home page
             </Link>
-            <button onClick={reset}>
+            <button onClick={reset} className="reset-btn">
                 Reset
             </button>
         </div>

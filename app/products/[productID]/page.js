@@ -1,13 +1,14 @@
 import Link from "next/link"
-// utils 
-import getProductData from "@/utils/getData"
 // page
 import NotFound from "@/app/not-found"
 
-const SelectedProduct = async ({ params: {productID} }) => {
-  const productDetails = await getProductData(productID) 
+// export const revalidate = 0;
 
-  if (!productDetails) return <NotFound/>
+const SelectedProduct = async ({ params: { productID } }) => { 
+  const apiCall = await fetch(`http://localhost:3000/api/products/${productID}`, {method: "GET"})
+  const productDetails = await apiCall.json()
+
+  if (!productDetails) return <NotFound />
 
   const { title, description, price, discountPercentage, rating, thumbnail } = productDetails
 
