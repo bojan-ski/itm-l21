@@ -26,7 +26,7 @@ const SearchBar = () => {
         router.push(`${pathname}?${params.toString()}`)
 
         const timer = setTimeout(async () => {
-            const apiCall = await fetch(`http://localhost:3000/api/search?query=${searchTerm}`, { method: "POST" })
+            const apiCall = await fetch(`http://localhost:3000/api/search?query=${searchTerm}`, { method: "GET" })
             const searchResults = await apiCall.json()
 
             setSearchResultsList(searchResults.products)
